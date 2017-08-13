@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body style="margin:20px">
+    <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column" id="box">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    标题
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>第一条消息</li>
+                        <!--<button onclick="openInfo()">展开</button>-->
+                        <button class="openBtn" value="0">展开</button>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    标题
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>第一条消息</li>
+                        <li>第二条消息</li>
+                        <button class="openBtn" value="0">展开</button>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    标题
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li >第一条消息</li>
+                        <li>第二条消息</li>
+                        <li>第三条消息</li>
+                        <button class="openBtn" value="0">展开</button>
+                    </ul>
+                </div>
+            </div>
+			
+		</div>
+	</div>
+</div>
+
+
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script>
+        var li = $(".panel-body ul li");
+        var first_li = $("#box .panel .panel-body ul").find("li:first");
+		$(document).ready(function(){
+           
+                // 页面加载完成时隐藏所有消息
+                li.hide();
+                //只显示第一条消息  
+                first_li.show();
+
+        })
+
+
+
+        // $(".openBtn").onclick(function(){
+        //     alert("click!");
+        //     // this.siblings("li").show();
+        // })  
+        // function openInfo() {
+        //     li.show();
+        //     // this.hide();
+            
+        // }
+
+        // $(".open").remove();
+        $(".openBtn").click(function(){
+            if ($(this).val() == 0) {
+                $(this).siblings("li").show();
+                $(this).text("收起");
+                $(this).val("1");
+            } else {
+                $(this).siblings("li").hide();
+                first_li.show();
+                $(this).text("展开");
+                $(this).val("0");
+            }
+
+        })
+
+        
+	</script>
+
+    </body>
+</html>

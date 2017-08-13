@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body style="margin:20px">
+    <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+
+			<table class="table table-hover table-bordered" >
+				<thead>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							产品
+						</th>
+						<th>
+							交付时间
+						</th>
+						<th>
+							<button type="button" class="btn btn-sm btn-primary" id="add" onclick="addInput()" >addItem</button>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="box">
+					<tr>
+						<td>1</td>
+						<td><input type="text" name="name" value="" class="form-control"></td>
+						<td><input type="datetime" name="birthday" class="form-control" ></td>
+						<td><button class="btn  btn-sm btn-danger" onclick="remove()" id="btn1" >delete</button></td>
+					</tr>
+		
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script>
+		// var maxInputs = 8;
+			
+		// // var itemsCount = $('#box').length;
+		// var fieldCount = 1;
+
+		
+		// function addInput(){
+		// 	if(fieldCount < maxInputs){
+		// 			fieldCount++;
+		// 			$('#box').append('<tr><td>'+ fieldCount +'</td><td><input class="form-control"></input></td><td><input class="form-control"></input></td><td><button class="btn btn-sm btn-danger" onclick="remove()">delete</button></td></tr>')
+		// 	}		
+		// }
+		
+
+		// function remove(){
+		// 	if(fieldCount > 1){
+		// 		// fieldCount--;
+		// 		// alert(fieldCount);
+		// 		$(this).parent().parent().remove();
+		// 	}
+		// }
+
+		$(document).ready(function(){
+			
+			var maxInputs = 8;
+			
+		// // var itemsCount = $('#box').length;
+		var fieldCount = 1;
+			
+
+			$('#add').click(function(){
+				if(fieldCount < maxInputs){
+					fieldCount++;
+					$('#box').append('<tr><td>'+ fieldCount +'</td><td><input class="form-control"></input></td><td><input class="form-control"></input></td><td><button class="btn btn-sm btn-danger"  id="btn'+ fieldCount +'">delete</button></td></tr>')
+					
+				
+
+					var btnId = $('#btn'+ fieldCount);
+					btnId.click(function(){
+						// alert(btnId.);
+						if (fieldCount > 1) {
+							fieldCount--;
+						$(this).parents("tr").remove();
+						}
+						
+						// alert('delete');
+					
+					})
+				}
+
+			}
+			)
+		});
+	</script>
+
+    </body>
+</html>
