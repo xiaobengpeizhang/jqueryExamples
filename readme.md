@@ -7,3 +7,4 @@
 >1. select.html使用了bootstrap前端框架。select2.html使用了Layui前端框架。
 >2. 主要区别是Layui在每次动态加载完成后都要再次渲染页面。实现方法：<code>form.render()</code>
 >3. 新增layer.html，实现弹窗后动态加载。
+* placeSelect.html --- 利用Algolia Places提供的插件实现的input检索地址输入框。

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aligolia Place</title>
+</head>
+<body style="margin:20px;">
+    <input type="search" id="address-input" placeholder="Where are we going?" />
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.4.15"></script>
+    <script>
+      var placesAutocomplete = places({
+        container: document.querySelector('#address-input'),
+        // type: 'city',
+        language:'cn',
+        countries:'cn'
+      });
+    </script>
+</body>
+</html>
